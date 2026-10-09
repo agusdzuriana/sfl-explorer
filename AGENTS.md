@@ -11,3 +11,4 @@
 
 - Keep system definitions in a shared browser-safe module and annotation in a focused workspace component so the three linguistic modes stay consistent.
 - Treat linguistic analysis as explicit manual annotation, not automatic inference; users must choose labels for their own text.
+- Projects, clauses and clause annotations are stored in browser localStorage via src/lib/projects-store.ts; clauses are word-index ranges over the tokenized project text (no backend requested yet).
