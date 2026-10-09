@@ -9,6 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        console: "bg-foreground text-background rounded-full shadow-sm hover:bg-foreground/85",
+        glass: "bg-background/60 text-foreground rounded-full border border-background/70 hover:bg-background/90",
+        tile: "system-tile",
+        feature: "system-feature",
+        navigation: "console-navigation",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
