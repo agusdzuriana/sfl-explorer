@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep system definitions in a shared browser-safe module and annotation in a focused workspace component so the three linguistic modes stay consistent.
+- Treat linguistic analysis as explicit manual annotation, not automatic inference; users must choose labels for their own text.
