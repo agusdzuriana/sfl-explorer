@@ -58,7 +58,7 @@ function ProjectPage() {
           <div className="row-end"><Button variant="ghost" onClick={() => setEditing(null)}>Cancel</Button><Button variant="console" onClick={saveText} disabled={!editing?.trim()}>Save text</Button></div>
         </> : <>
           <p className="hint">{first === null ? 'Click the first word of a clause, then click its last word.' : `Now click the last word (started at “${words[first]}”). Click again to cancel.`}</p>
-          <div className="word-flow">{words.map((w, i) => { const c = clauseOf(i); const n = c >= 0 ? sorted.findIndex(s => s.id === project.clauses[c].id) + 1 : 0; return <button key={i} type="button" onClick={() => (first === i ? setFirst(null) : clickWord(i))} className={`word ${c >= 0 ? 'in-clause' : ''} ${first === i ? 'word-first' : ''} ${c >= 0 && project.clauses[c].start === i ? 'clause-start' : ''}`}>{c >= 0 && project.clauses[c].start === i && <sup>{n}</sup>}{w}</button>; })}</div>
+          <div className="word-flow">{words.map((w, i) => { const c = clauseOf(i); const cl = project.clauses[c]; const n = cl ? sorted.findIndex(s => s.id === cl.id) + 1 : 0; return <button key={i} type="button" onClick={() => (first === i ? setFirst(null) : clickWord(i))} className={`word ${c >= 0 ? 'in-clause' : ''} ${first === i ? 'word-first' : ''} ${cl?.start === i ? 'clause-start' : ''}`}>{cl?.start === i && <sup>{n}</sup>}{w}</button>; })}</div>
           {error && <p className="text-destructive text-sm" role="alert">{error}</p>}
         </>}
       </section>
